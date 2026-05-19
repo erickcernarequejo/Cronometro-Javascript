@@ -3,16 +3,36 @@ let iniciar = document.getElementById('iniciarS');
 let resetear = document.getElementById('resetear');
 let grabar = document.getElementById('grabar');
 let almacenarTiempos = document.getElementById('almacenarTiempos');
+let themeToggle = document.getElementById('themeToggle');
 
 let tiempo = 0, intervalo = 0;
 let verificador = false;
+let currentTheme = localStorage.getItem('theme') || 'light';
 
 init();
+initTheme();
+
+function initTheme() {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon();
+}
+
+function toggleTheme() {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('theme', currentTheme);
+    updateThemeIcon();
+}
+
+function updateThemeIcon() {
+    themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+}
 
 function init() {
     iniciar.addEventListener('click', iniciarContador);
     resetear.addEventListener('click', resetearContador);
     grabar.addEventListener('click', grabarContador);
+    themeToggle.addEventListener('click', toggleTheme);
 }
 
 function iniciarContador() {
