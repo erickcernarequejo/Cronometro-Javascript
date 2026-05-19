@@ -44,9 +44,8 @@ function grabarContador() {
     }
     else {
         let p = document.createElement('ul');
-        p.innerHTML = `
-        <li>Tiempo : ${tiempo.toFixed(2)}</li>
-    `;
+        p.className = 'tiempo-item';
+        p.innerHTML = `<li>Tiempo: ${tiempo.toFixed(2)}s</li>`;
         almacenarTiempos.appendChild(p);
     }
 

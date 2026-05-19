@@ -1,0 +1,217 @@
+/* Estilos personalizados para el Cronómetro */
+
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --success-color: #48dbfb;
+    --danger-color: #ff6348;
+    --warning-color: #ffa502;
+    --light-bg: #f8f9fa;
+    --dark-text: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container-cronometro {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 50px 30px;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: var(--dark-text);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+#temporizador {
+    font-size: 5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin: 30px 0;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.btn-custom {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    min-width: 120px;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-custom:active {
+    transform: translateY(0);
+}
+
+.btn-iniciar {
+    background: linear-gradient(135deg, #48dbfb, #0abde3);
+    color: white;
+}
+
+.btn-iniciar:hover {
+    background: linear-gradient(135deg, #0abde3, #048a8e);
+    color: white;
+}
+
+.btn-resetear {
+    background: linear-gradient(135deg, #ff6348, #ee5a6f);
+    color: white;
+}
+
+.btn-resetear:hover {
+    background: linear-gradient(135deg, #ee5a6f, #c83349);
+    color: white;
+}
+
+.btn-grabar {
+    background: linear-gradient(135deg, #ffa502, #ff6348);
+    color: white;
+}
+
+.btn-grabar:hover {
+    background: linear-gradient(135deg, #ff6348, #cc3500);
+    color: white;
+}
+
+.tiempos-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #ecf0f1;
+}
+
+.tiempos-section h5 {
+    color: var(--dark-text);
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.tiempo-item {
+    background: linear-gradient(135deg, #f8f9fa, #ecf0f1);
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--dark-text);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+    animation: slideIn 0.3s ease;
+}
+
+.tiempo-item:hover {
+    background: linear-gradient(135deg, #ecf0f1, #dfe6e9);
+    transform: translateX(5px);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.tiempo-item li {
+    list-style: none;
+    width: 100%;
+}
+
+#almacenarTiempos {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#almacenarTiempos::-webkit-scrollbar {
+    width: 6px;
+}
+
+#almacenarTiempos::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#almacenarTiempos::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+#almacenarTiempos::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container-cronometro {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    #temporizador {
+        font-size: 4rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-custom {
+        width: 100%;
+    }
+}
