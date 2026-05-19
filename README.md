@@ -1,6 +1,6 @@
 # Cronómetro JavaScript
 
-Un cronómetro interactivo simple construido con HTML, CSS y JavaScript. Interfaz amigable con Bootstrap 4.
+Un cronómetro interactivo construido con HTML, CSS y JavaScript. Incluye una interfaz moderna, responsiva y modo oscuro con persistencia de tema.
 
 ## Características
 
@@ -8,7 +8,9 @@ Un cronómetro interactivo simple construido con HTML, CSS y JavaScript. Interfa
 - Inicia/Pausa el cronómetro
 - Resetea el tiempo a 0.00
 - Graba tiempos parciales en una lista
-- Interfaz responsiva con Bootstrap
+- Interfaz responsiva para escritorio y móvil
+- Modo oscuro y modo claro con cambio en un clic
+- Persistencia de tema con localStorage
 
 ## Demostración
 
@@ -20,7 +22,7 @@ Puedes probar la aplicación en vivo aquí:
 - **HTML5** - Estructura semántica
 - **CSS3** - Estilos personalizados con gradientes y animaciones
 - **JavaScript (Vanilla)** - Lógica pura sin frameworks
-- **Bootstrap 4.3.1** - Framework CSS para componentes base
+- **Arquitectura estática** - Compatible con GitHub Pages sin build
 
 ## Instalación
 
@@ -36,6 +38,7 @@ git clone https://github.com/erickcernarequejo/Cronometro-Javascript.git
 1. Haz clic en **"Iniciar/Stop"** para comenzar o pausar el cronómetro
 2. Usa **"Grabar"** para capturar tiempos parciales
 3. **"Resetear"** reinicia todo a 0.00 y limpia los tiempos grabados
+4. Presiona el botón **🌙/☀️** para alternar entre modo oscuro y claro
 
 ## Estructura del Proyecto
 
@@ -51,9 +54,8 @@ Cronometro-Javascript/
 
 ## Futuras Mejoras
 
-- [ ] Modo oscuro
 - [ ] Exportar tiempos a CSV
-- [ ] Almacenamiento local (localStorage)
+- [ ] Guardar tiempos grabados en localStorage
 - [ ] Aplicación PWA
 - [ ] Múltiples cronómetros simultáneos
 
